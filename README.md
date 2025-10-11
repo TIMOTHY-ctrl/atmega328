@@ -8,3 +8,7 @@
 ***KY-020***
 
 ![WhatsApp Image 2025-10-08 at 21 24 09_45275609](https://github.com/user-attachments/assets/e953e49d-0c62-47ba-8f76-a47991520bd9)
+
+
+***https://www.youtube.com/watch?v=0V7PkoYPm8w***
+***https://www.youtube.com/watch?v=xkNt-Av0KBk***
