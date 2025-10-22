@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>realwork</AssemblyName>
-    <Name>realwork</Name>
-    <RootNamespace>realwork</RootNamespace>
+    <AssemblyName>embeded-code</AssemblyName>
+    <Name>embeded-code</Name>
+    <RootNamespace>embeded-code</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
