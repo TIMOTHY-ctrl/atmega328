@@ -5,11 +5,6 @@
 
 ![WhatsApp Image 2025-10-08 at 21 24 08_57d78a6e](https://github.com/user-attachments/assets/277e9fd3-8754-4235-823f-cc4fecac1c7b)
 
-***KY-020***
-
-![WhatsApp Image 2025-10-08 at 21 24 09_45275609](https://github.com/user-attachments/assets/e953e49d-0c62-47ba-8f76-a47991520bd9)
-
-
 ***https://www.youtube.com/watch?v=0V7PkoYPm8w***
 
 
@@ -17,6 +12,9 @@
 
 
 <img width="266" height="254" alt="image" src="https://github.com/user-attachments/assets/2060cbec-4ada-43ca-8620-438ad14a70ab" />
+
+
+<img width="481" height="485" alt="image" src="https://github.com/user-attachments/assets/d6ddef9f-c27e-4379-a814-3167dc9a130a" />
 
 
 
