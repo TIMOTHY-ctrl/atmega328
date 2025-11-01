@@ -11,10 +11,14 @@
 ***https://www.youtube.com/watch?v=xkNt-Av0KBk***
 
 
-<img width="266" height="254" alt="image" src="https://github.com/user-attachments/assets/2060cbec-4ada-43ca-8620-438ad14a70ab" />
+<img width="266" height="354" alt="image" src="https://github.com/user-attachments/assets/2060cbec-4ada-43ca-8620-438ad14a70ab" />
 
 
-<img width="481" height="485" alt="image" src="https://github.com/user-attachments/assets/d6ddef9f-c27e-4379-a814-3167dc9a130a" />
+
+
+
+<img width="1920" height="1080" alt="Screenshot 2025-11-01 135313" src="https://github.com/user-attachments/assets/bafe9f99-ff00-4d45-bcd2-8c03526a5871" />
+
 
 
 
