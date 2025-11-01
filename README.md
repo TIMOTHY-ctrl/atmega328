@@ -18,6 +18,11 @@
 
 
 
+<img width="1920" height="1080" alt="Screenshot 2025-11-01 135313" src="https://github.com/user-attachments/assets/bafe9f99-ff00-4d45-bcd2-8c03526a5871" />
+
+
+
+
 understand the soil moisture sensor  https://projecthub.arduino.cc/Aswinth/soil-moisture-sensor-with-arduino-91c818?_gl=1*chy7td*_up*MQ..*_ga*MjEwNDQ2NTM2LjE3NjA4ODk4NDU.*_ga_NEXN8H46L5*czE3NjA4ODk4NDMkbzEkZzAkdDE3NjA4ODk4NDMkajYwJGwwJGg2MDA4NzcyMDc.
 
 
