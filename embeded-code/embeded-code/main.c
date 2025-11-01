@@ -41,9 +41,9 @@
 #define BAUD 9600
 #define MYUBRR (F_CPU/16/BAUD-1)
 
-#define WARN_THRESHOLD 10
-#define ALERT_THRESHOLD 4
-#define PUMP_OFF_THRESHOLD 20
+#define WARN_THRESHOLD 40
+#define ALERT_THRESHOLD 20
+#define PUMP_OFF_THRESHOLD 60
 
 volatile uint8_t tiltCount = 0;
 volatile uint8_t pumpOn = 0;
@@ -263,11 +263,14 @@ int main(void) {
     uint8_t percent;
 
     while (1) {
-        // Read ADC (soil)
-        raw = ADC_Read(SOIL_ADC_CHANNEL);
-        // compute percentage without float:
-        percent = (uint8_t)((raw * 100UL) / 1023UL);
+		uint16_t raw = ADC_Read(SOIL_ADC_CHANNEL);
+		uint16_t dry = 650;  // measure this in air
+		uint16_t wet = 200;  // measure this fully in water
 
+		if (raw > dry) raw = dry;
+		if (raw < wet) raw = wet;
+
+		percent = (uint8_t)(((dry - raw) * 100UL) / (dry - wet));
         // Debug print
         sprintf(dbgbuf, "Soil=%u (%u%%)\r\n", raw, percent);
         USART_SendString(dbgbuf);
@@ -279,38 +282,44 @@ int main(void) {
         itoa(percent, dbgbuf, 10);
         LCD_I2C_String(dbgbuf);
         LCD_I2C_String("%   "); // padding to erase leftover chars
+		
 
         // Logic
         if (percent <= ALERT_THRESHOLD) {
             // Critical: water now
             PORTB |= (1<<LED_RED);
-            PORTB &= ~((1<<LED_YELLOW));
+            PORTB &= ~((1<<LED_GREEN));
             setRelay(1); // pump on
-            PORTB |= (1<<LED_GREEN); // indicate pump running
+            PORTB ^= (1<<LED_YELLOW); // indicate pump running
             LCD_I2C_SetCursor(1,0);
             LCD_I2C_String("WATER THE PLANT ");
         }
         else if (percent <= WARN_THRESHOLD) {
             // Warning
-            PORTB |= (1<<LED_YELLOW);
+            PORTB |= (1<<LED_GREEN);
+			_delay_ms(1000);
+			PORTB &= ~(1<<LED_GREEN);
+			_delay_ms(1000);			
             PORTB &= ~(1<<LED_RED);
             // Turn pump off if we've gone above PUMP_OFF_THRESHOLD
             if (pumpOn && percent >= PUMP_OFF_THRESHOLD) {
                 setRelay(0);
-                PORTB &= ~(1<<LED_GREEN);
+                PORTB &= ~(1<<LED_YELLOW);
             } else if (!pumpOn) {
-                PORTB &= ~(1<<LED_GREEN);
+                PORTB &= ~(1<<LED_YELLOW);
             }
             LCD_I2C_SetCursor(1,0);
             LCD_I2C_String("Moisture is low ");
+			
         }
+
         else {
             // OK
             PORTB &= ~((1<<LED_YELLOW)|(1<<LED_RED));
-            if (pumpOn && percent >= PUMP_OFF_THRESHOLD) {
+			if (pumpOn && percent >= PUMP_OFF_THRESHOLD) {
                 setRelay(0);
-            }
-            PORTB &= ~(1<<LED_GREEN);
+            }	
+			PORTB &= ~(1<<LED_GREEN);
             LCD_I2C_SetCursor(1,0);
             LCD_I2C_String("Moisture OK     ");
         }
@@ -321,7 +330,7 @@ int main(void) {
             LCD_I2C_SetCursor(0,0);
             LCD_I2C_String("Wind available ");
             // optionally show moisture on 2nd line after small delay
-            _delay_ms(2500);
+            _delay_ms(5000);
             LCD_I2C_Clear();
             tiltCount = 0;
         }
