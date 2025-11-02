@@ -94,3 +94,12 @@ Example: Controlling the brightness of an LED. Instead of just ON/OFF, you can s
 Common Function:
 
 analogWrite(pin, value) - Writes a PWM signal (value from 0 to 255).
+
+
+![WhatsApp Image 2025-11-03 at 01 10 57_7d205117](https://github.com/user-attachments/assets/4d04e3d2-3268-458b-984f-67826d691826)
+
+
+![WhatsApp Image 2025-11-03 at 01 10 56_0c60937a - Copy](https://github.com/user-attachments/assets/15310671-fe1e-4bfa-ac41-8f29f56a294e)
+
+
+
